@@ -1,0 +1,124 @@
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.kswntree .link a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    white-space: normal;
+    /*padding: 15px 20px;*/
+    margin-bottom:10px  ;
+    display: block;
+    position: relative;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transition: color .25s cubic-bezier(.08,.59,.29,.99),border-color .25s cubic-bezier(.08,.59,.29,.99),background-color .25s cubic-bezier(.08,.59,.29,.99),-webkit-box-shadow .25s cubic-bezier(.08,.59,.29,.99),-webkit-transform .25s cubic-bezier(.08,.59,.29,.99);
+    transition: color .25s cubic-bezier(.08,.59,.29,.99),border-color .25s cubic-bezier(.08,.59,.29,.99),background-color .25s cubic-bezier(.08,.59,.29,.99),-webkit-box-shadow .25s cubic-bezier(.08,.59,.29,.99),-webkit-transform .25s cubic-bezier(.08,.59,.29,.99);
+    transition: box-shadow .25s cubic-bezier(.08,.59,.29,.99),color .25s cubic-bezier(.08,.59,.29,.99),border-color .25s cubic-bezier(.08,.59,.29,.99),transform .25s cubic-bezier(.08,.59,.29,.99),background-color .25s cubic-bezier(.08,.59,.29,.99);
+    transition: box-shadow .25s cubic-bezier(.08,.59,.29,.99),color .25s cubic-bezier(.08,.59,.29,.99),border-color .25s cubic-bezier(.08,.59,.29,.99),transform .25s cubic-bezier(.08,.59,.29,.99),background-color .25s cubic-bezier(.08,.59,.29,.99),-webkit-box-shadow .25s cubic-bezier(.08,.59,.29,.99),-webkit-transform .25s cubic-bezier(.08,.59,.29,.99);
+}
+.kswntree .logo-brand {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+.kswntree .img-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: block;
+    background-color: rgba(0,0,0,.1);
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.kswntree .logo-brand h3 {
+    line-height: 1;
+    margin: 0 auto 20px;
+}
+.img-circle img {
+    width: 0;
+    min-width: 96px;
+    min-height: 96px;
+}
+.img-circle {
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.logo-brand h3 {
+    line-height: 1;
+    margin: 0 auto 20px;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 80px auto 30px;
+}
+.kswntree .user-ig{
+    color: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    border-color: transparent;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn, .btn:focus, .btn:hover {
+    color: #222;
+}
+.btn {
+    position: relative;
+    outline: 0!important;
+    font-weight: 700;
+    border-width: 2px;
+    /*border-style: solid;*/
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+a, a:hover {
+    color: #222;
+}
+.kswntree .btn-link {
+    color: #fff;
+    /*border: 2px solid black;*/
+    /*background-color: #02803A !important;*/
+    text-align: center;
+    position: relative;
+    -webkit-transition: all .25s cubic-bezier(.08,.59,.29,.99);
+    transition: all .25s cubic-bezier(.08,.59,.29,.99);
+    z-index: 2;
+}
+.btn-link, .btn-link:hover {
+    background-color: transparent;
+}
+.btn, .btn:focus, .btn:hover {
+    color: #222;
+}
+mark {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}

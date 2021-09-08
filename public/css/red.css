@@ -1,0 +1,182 @@
+/*------------------------------------------------
+Primary colors List
+-------------------------------------------------- */
+#search_section, #main_tab, .Cbutton, #content .wp-pagenavi span.current, #content .wp-pagenavi .on, .normal_button, #content .normal_button,
+input[type="submit"], input[type="reset"], input[type="button"], button, a.button, .applyjob, .removejob { background: #e03f3f; }
+
+.category_list-in li a:hover, a, #content .login_form a:hover, #tab li a:hover, #tab li.current_page_item a,
+#content h1 a, #content .post_top  a, #content p a, #banner .classified p a, #content a, #content .list_01 li h2 a:hover, #content .newlisting-block .posted-date a:hover,
+#content .listings h3, #sidebar .nav_recent li h4, #sidebar .nav_recent li h4 a:hover, #content .listings h3 span a.jp_title,
+#content .listings h3 span  a:hover, #content .featured h3 span a.jp_title, #sidebar p a, .widget_tag_cloud a, #sidebar ul li a:hover,
+#content .listings h3 a:hover, #content .featured h3, #content .featured h3 a, .rs_list li .col1 span, #content .arclist li .arclist_date a:hover,
+.category_list-in .current a { color:#e03f3f; }
+
+
+#content h1, #content h1 a:hover, #content h2, h2 a, #content .post_top, #content .post_top a:hover, #content span.address, #content a:hover, #content .list_01 li h2 a,
+#content .listings span.jobs a:hover, #content .featured h3 span  a:hover, #content .featured span.jobs a:hover, #content blockquote p,
+.jobform, #content .category a:hover, #content .archives a:hover, .textarea, #calendar_wrap caption, #sidebar p a:hover, .widget_tag_cloud a:hover,
+#content p a:hover, #banner .classified p a:hover, #content .listings h3:hover, #sidebar .nav_recent li h4 a, #content .listings h3 a,
+#content .wp-pagenavi a, .wp-pagenavi a:link, .wp-pagenavi a:active, #content .wp-pagenavi span.extend   { color:#333; }
+
+h6, #header-in .logo-image a, #content p.company_name a:hover, #commentform label, #content .wp-pagenavi span.pages, #content .featured h3:hover,
+#content .featured h3 a:hover  { color:#000;}
+
+.category_list-in, .category_list-in li, .category_list-in li a, a:hover, #content .login_form a, #content .listings h3 span  a,
+#content blockquote cite, #sidebar ul li a { color:#444; }
+
+#content span.website, #content .featured h3 span, #content .featured h3 span  a, #content blockquote, #content .category a, #content .archives a,
+#sidebar input, .search404 .s { color:#666; }
+
+#content .featured p.time, #content .listings p.time, #content .commentlist .says, #content .comment-meta a { color:#777; }
+
+#content .listings h3 span  { color:#999; }
+
+#nav ul li:hover, #nav ul li a:hover, #nav ul li.current_page_item, #nav ul li.current-menu-item, #nav ul li.current_page_item  a, #nav ul li.current-menu-item  a,
+#nav ul li.current_page_item a:hover, #nav ul li.current-menu-item a:hover, #nav ul li.current_page_item:hover, #nav ul li.current-menu-item:hover,
+#header-in .logo-text a:hover, #header li a, .Cbutton, .Cbutton:hover, .contactform #contactsubmit, #content .wp-pagenavi .on,
+#content .wp-pagenavi span.current, .normal_button, #content .normal_button, .normal_button:focus, #content .normal_button:focus,
+.normal_button:hover, #content .normal_button:hover, #content .wp-pagenavi a:hover, #content .wp-pagenavi a:hover strong  { color:#fff; }
+
+#cssmenu > ul > li:hover > a {
+  color: #fecece;
+}
+/*------------------------------------------------
+Headings
+-------------------------------------------------- */
+h1 a, h3 a { border-bottom:none; }
+h2 { color: #546575; }
+h6 { border-bottom:1px dashed #ccc; }
+
+/*------------------------------------------------
+Tab
+-------------------------------------------------- */
+#tab .page_item a { border-top:1px solid #e35353; }
+
+/*------------------------------------------------
+Page Navigation
+-------------------------------------------------- */
+#nav ul li a { color: #fea1a1; }
+#nav ul li a:hover { border: none; }
+
+/*------------------------------------------------
+Header
+-------------------------------------------------- */
+#header-in .logo-image { color:#add352; }
+#header-in .logo-text { color:#c1c1c1; }
+#header-in .logo-text a { color:#d1d1d1; }
+
+/*------------------------------------------------
+Search - 404
+-------------------------------------------------- */
+.search404 { background:url(red_color_scheme/searchbg2.png) no-repeat; }
+.search404 .s {	border:none; background:none; }
+.search404 .sgo { background:url(red_color_scheme/b_go2.png) no-repeat; }
+.search404 .sgo:hover { background-position:0 -31px; }
+
+/*------------------------------------------------
+Content
+-------------------------------------------------- */
+#content h1 { background:none;}
+#content h2 { border-bottom:1px dashed #ccc; }
+
+#content p.company_name { color:#cd5858; }
+#content p.company_name a { color:#cd5858; }
+#content .post_top .date { color:#49759c; }
+ 
+.lred { color:#91a8bc; }
+#content p a:hover, #banner .classified p a:hover { border-bottom:none; }
+
+#content .listings span.jobs { color:#49759c; border-bottom:1px dashed #e5e5e5; }
+#content .listings span.jobs a { color:#49759c; }
+
+#content .featured { background:#FFD2D2; border-bottom:1px solid #d7dce3; }
+#content .featured:hover { background:#eee; }
+
+#content .featured span.jobs { color:#49759c; border-bottom:1px dashed #e5e5e5; }
+#content .featured span.jobs a { color:#49759c; }
+
+#content ol li { background:none; }
+#content blockquote { background:url(grey_color_scheme/quote.png) no-repeat left top; border-bottom:1px dotted #d2d2d2; clear:both; }
+
+#pagenavi { border-top:1px dashed #ccc; border-bottom:1px dashed #ccc; }
+#content p.i_previous { background:url(red_color_scheme/arrow-left.gif) no-repeat 0 3px; }
+#content p.i_next { background:url(red_color_scheme/arrow-right.gif) no-repeat right 5px; }
+
+/*------------------------------------------------
+Create a Job
+-------------------------------------------------- */
+#content .createjob h2 { color: #cd5858; border-bottom:1px dotted #c1c3c7; background:none; }
+
+.jobtextfield { border:1px solid #d0d0d0; float:left; }
+.wordscal { border:1px solid #d0d0d0; background:#f7faff; }
+.note { color:#737373; }
+.jobcheckbox {  background:#f7faff; }
+
+.required { color:#FF0000; }
+
+.jobtextfield2 { border:1px solid #d0d0d0; }
+
+/*------------------------------------------------
+Post
+-------------------------------------------------- */
+.category { border-right:1px solid #eee; }
+
+/*------------------------------------------------
+Previous/Next Page Navigation
+-------------------------------------------------- */
+.page-nav a { border-bottom:none; color:#939393; }
+.page-nav a:hover{color:#666666;}
+
+/*------------------------------------------------
+Comments
+-------------------------------------------------- */
+#content .commentform h6 { border-bottom:none; padding:0; }
+.textarea { border:1px solid #ccc; background:#fff; }
+.textarea:hover { border:1px solid #ccc; }
+.Cbutton { border:none; }
+.Cbutton:hover { border:none; background:#333; }
+
+.commetmainauthor { border-bottom:4px solid #ccc; }
+.commetmain { background:#f9f9f9; border-bottom:4px solid #ddd; }
+#content .trackbacklist li { border-bottom:1px solid #ccc; }
+
+/*------------------------------------------------
+Contact Form
+-------------------------------------------------- */
+.contactform textarea, .contactform input { border:1px solid #d0d0d0; background:#f7faff; padding:4px; font:12px Arial, Helvetica, sans-serif;  }
+.contactform textarea:hover, .input:hover, textarea:focus {  }
+.contactform #contactsubmit { background:#213648; }
+.contactform #contactsubmit:hover { background:#e6380d; }
+.contactright { color:#990000; }
+ 
+/*------------------------------------------------
+Page Navigation - 2
+-------------------------------------------------- */
+#content .wp-pagenavi a, .wp-pagenavi a:link, .wp-pagenavi a:active, #content .wp-pagenavi span.pages, #content .wp-pagenavi span.extend {  background-color:#d7d7d7; }
+#content .wp-pagenavi a:hover, #content .wp-pagenavi a:hover strong {  background-color: #333; }
+
+/*------------------------------------------------
+Widgets
+-------------------------------------------------- */
+/* calendar css ------------------------ */
+#calendar_wrap caption { background:#ddd; }
+
+/* search css ------------------------ */	
+#sidebar input { border:2px solid #e5e5e5; }
+
+/* My Account ------------------------ */
+.xboxcontent { background:#fff;  border:2px solid #e5e5e5;}
+
+/* Sidebar ------------------------ */
+
+#sidebar p a:hover, .widget_tag_cloud a:hover { text-decoration:none; }
+#sidebar ul li a  { text-decoration:none; }
+
+.normal_button:focus, #content .normal_button:focus { background:#313539; }
+.normal_button:hover, #content .normal_button:hover { background:#141b22; }
+
+
+.breviewyourlist .normal_button, #recaptcha-submit-btn-area .normal_button, *+html #commentform p .normal_button{
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A83B3B', endColorstr='#821D1D') !important;}
+
+.breviewyourlist .normal_button:hover, #recaptcha-submit-btn-area .normal_button:hover, *+html #commentform p .normal_button:hover{filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#2d2d2d') !important;}
