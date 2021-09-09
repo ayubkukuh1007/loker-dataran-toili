@@ -116,85 +116,60 @@
                     <div class="entry-content">
                         <div class="job_listings">
                             @include('websiteloker.filter.filter')
-                            <!-- start job -->
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                <div class="post-media" style="text-align: center;">
-                                    <a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/" target="_blank" class="img-thumbnail">
-                                    <img width="500" height="500" src="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?resize=500%2C500&amp;ssl=1" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?w=500&amp;ssl=1 500w, https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?resize=300%2C300&amp;ssl=1 300w, https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?resize=150%2C150&amp;ssl=1 150w" sizes="(max-width: 500px) 100vw, 500px" data-attachment-id="63758" data-permalink="https://www.Loker Toili.co.id/?attachment_id=63758" data-orig-file="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?fit=500%2C500&amp;ssl=1" data-orig-size="500,500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="svarga" data-image-description="" data-image-caption="" data-medium-file="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?fit=500%2C500&amp;ssl=1" data-recalc-dims="1">
-                                    </a>
-                                </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="badge job-type favorit" style="list-style: none;">Favorite</div>
-                                <div class="badge job-type full-time" style="list-style: none;">Full Time</div>
-                                    <h3><a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/" title="" target="_blank" size="5">Barista – Kitchen Staff – Kasir – Server – Tukang Parkir </a></h3>
-                                    <small>
-                                    <span>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i> : <a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/">Svarga Flora Coffee &amp; Plants</a>
-                                    </span>
-                                    <span>
-                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i> : UMUM </span>&nbsp;&nbsp; <span>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i> : 05-09-2021 </span>
-                                    </small>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <div class="job-meta">
-                                    <p></p>
-                                    <h5>Yogyakarta</h5>
-                                    <small>
-                                        <li>Gaji Kompetitif</li>
-                                    </small>
+                              @foreach ($jobs as $job)
+                              <p></p>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                      <div class="post-media" style="text-align: center;">
+                                        <a href="#" target="_blank" class="img-thumbnail">
+                                          <img width="500" height="500" src="{{asset('images/logo/')}}/{{$job['logo']}}" 
+                                          class="img-responsive wp-post-image logo" alt="logo" loading="lazy">
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        @foreach ($job['jobtype'] as $type)
+                                          @if ($type == 'Favorite')
+                                              <div class="badge job-type favorit">Favorite</div>
+                                          @elseif ($type == 'Part Time')
+                                              <div class="badge job-type part-time">Part Time</div>
+                                          @elseif ($type == 'Freelance')
+                                              <div class="badge job-type freelance">Freelance</div>
+                                          @elseif ($type == 'Full Time')
+                                              <div class="badge job-type fulltime">Full Time</div>                              
+                                          @endif
+                                        @endforeach
+                                        <h3><a href="#" title="" target="_blank" size="5">{{$job['job']}}</a></h3>
+                                        <small>
+                                          <span>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i> : <a href="#">{{$job['company']}}</a>
+                                          </span>
+                                          <span>
+                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i> : {{$job['graduated']}} </span>&nbsp;&nbsp; <span>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i> : {{$job['postdate']}} </span>
+                                          <span>
+                                            <i class="fa fa-calendar" aria-hidden="true"></i> : <a href="#">{{$job['posttime']}}</a>
+                                          </span>
+                                        </small>
+                                      </div>
+                                      <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="job-meta">
+                                          <p></p>
+                                          <h5>{{$job['location']}}</h5>
+                                          <small>
+                                            <li>{{$job['salary']}}</li>
+                                          </small>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-2 col-sm-2 col-xs-12 job-meta text-center">
+                                      <div class="job-meta text-center">
+                                        <h4></h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block btn-responsive" target="_blank">Lihat Lowongan</a>
+                                      </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12 job-meta text-center">
-                                <div class="job-meta text-center">
-                                    <h4></h4>
-                                    <a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/" class="btn btn-primary btn-sm btn-block btn-responsive" target="_blank">Lihat Lowongan</a>
-                                </div>
-                                </div>
-                            </div>
-                            <!-- space -->
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                <div class="post-media" style="text-align: center;">
-                                    <a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/" target="_blank" class="img-thumbnail">
-                                    <img width="500" height="500" src="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?resize=500%2C500&amp;ssl=1" class="img-responsive wp-post-image" alt="" loading="lazy" srcset="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?w=500&amp;ssl=1 500w, https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?resize=300%2C300&amp;ssl=1 300w, https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?resize=150%2C150&amp;ssl=1 150w" sizes="(max-width: 500px) 100vw, 500px" data-attachment-id="63758" data-permalink="https://www.Loker Toili.co.id/?attachment_id=63758" data-orig-file="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?fit=500%2C500&amp;ssl=1" data-orig-size="500,500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="svarga" data-image-description="" data-image-caption="" data-medium-file="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i2.wp.com/www.Loker Toili.co.id/wp-content/uploads/2021/02/svarga.png?fit=500%2C500&amp;ssl=1" data-recalc-dims="1">
-                                    </a>
-                                </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="badge job-type favorit" style="list-style: none;">Favorite</div>
-                                <div class="badge job-type full-time" style="list-style: none;">Full Time</div>
-                                    <h3><a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/" title="" target="_blank" size="5">Barista – Kitchen Staff – Kasir – Server – Tukang Parkir </a></h3>
-                                    <small>
-                                    <span>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i> : <a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/">Svarga Flora Coffee &amp; Plants</a>
-                                    </span>
-                                    <span>
-                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i> : UMUM </span>&nbsp;&nbsp; <span>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i> : 05-09-2021 </span>
-                                    </small>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <div class="job-meta">
-                                    <p></p>
-                                    <h5>Yogyakarta</h5>
-                                    <small>
-                                        <li>Gaji Kompetitif</li>
-                                    </small>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12 job-meta text-center">
-                                <div class="job-meta text-center">
-                                    <h4></h4>
-                                    <a href="https://www.Loker Toili.co.id/lowongan-kerja-Toili/barista-kitchen-staff-kasir-server-tukang-parkir-2/" class="btn btn-primary btn-sm btn-block btn-responsive" target="_blank">Lihat Lowongan</a>
-                                </div>
-                                </div>
-                            </div>
-                            <hr>
+                                <hr>
+                              @endforeach
                             <a class="btn btn-primary load_more_jobs" href="#" style="display: block; padding: 1em 1em 1em 2em;">
                             <strong>LOWONGAN SELANJUTNYA</strong></a>
                         </div>
