@@ -141,16 +141,16 @@
             <div class="row">
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Kata Kunci"  name="search_keywords">
+                  <input type="text" class="form-control" placeholder="Kata Kunci" name="search_keywords" id="search_keywords" >
                 </div>
               </div>
               <!-- end col -->
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="input-group">
                   <select class="form-control" name="search_region" id="search_region">
-                    <option value="0">Semua Lokasi</option>
+                    <option value="" selected="" disabled="">Semua Lokasi</option>
                     @foreach ($locations as $location)
-                      <option class="level-0" value="{{$location->id}}">{{$location->location}}</option>
+                      <option value="{{$location->id}}">{{$location->location}}</option>
                     @endforeach
                   </select>
                 </div>
@@ -158,8 +158,8 @@
               <!-- end col -->
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="input-group">
-                  <select class="form-control" name="search_region" id="search_region">
-                    <option value="form-control" selected="" disabled="">Semua Lulusan</option>
+                  <select class="form-control" name="search_graduate" id="search_graduate">
+                    <option value="" selected="" disabled="">Semua Lulusan</option>
                     @foreach ($graduates as $graduated)
                       <option value="{{$graduated->id}}">{{$graduated->graduated}}</option>
                     @endforeach
@@ -168,7 +168,7 @@
               </div>
               <!-- end col -->
               <div class="col-md-3 col-sm-6 col-xs-12">
-                <button class="btn btn-primary btn-block">Cari Lowongan</button>
+                <button type="submit" class="btn btn-primary btn-block">Cari Lowongan</button>
               </div>
               <!-- end col -->
             </div>
@@ -331,6 +331,7 @@
 <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- <script src='https://stats.wp.com/e-202135.js' defer></script> -->
 <script>
+  //load more
   $(".see-more").click(function() {
       event.preventDefault();
       $div = $($(this).data('div')); 
@@ -351,7 +352,7 @@
             $(".see-more").data('page', String(str));
         },
         error: function(response) {
-          console.log(response);
+          
         }
       });
   });

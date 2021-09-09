@@ -8,17 +8,19 @@ use App\Http\Controllers\TipekerjaController;
 use App\Http\Controllers\LokerController;
 use App\Http\Controllers\RequestClientController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\SearchlowonganController;
 
 Route::get('/', [MainController::class,'index']);
 Route::get('page/{page}', [MainController::class,'pagination']);
+//search job
+Route::get('search-lowongan', [SearchlowonganController::class,'searchjob']);
+Route::get('search-lowongan', [SearchlowonganController::class,'index']);
 Route::get('format-iklan', function () {return view('websiteloker.formatiklan');});
 Route::get('kebijakan', function () {return view('websiteloker.kebijakan');});
 Route::get('kontak', function () {return view('websiteloker.kontak');});
 Route::get('tentang-kami', function () {return view('websiteloker.tentangkami');});
 Route::get('pasang-lowongan', function () {return view('websiteloker.pasanglowongan');});
-Route::get('search-lowongan', function () {return view('websiteloker.searchloker');});
 Route::get('detail-lowongan', function () {return view('websiteloker.detailloker');});
-
 // request client
 Route::get('getlocations',[RequestClientController::class,'getlocations']);
 Route::get('graduates',[RequestClientController::class,'getgraduations']);

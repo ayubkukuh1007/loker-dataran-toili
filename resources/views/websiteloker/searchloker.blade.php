@@ -196,7 +196,7 @@
                             </div>
                             <hr>
                             <a class="btn btn-primary load_more_jobs" href="#" style="display: block; padding: 1em 1em 1em 2em;">
-                            <strong><i class="fa fa-spinner fa-spin"></i>LOWONGAN SELANJUTNYA</strong></a>
+                            <strong>LOWONGAN SELANJUTNYA</strong></a>
                         </div>
                     </div>
                 </div> 
