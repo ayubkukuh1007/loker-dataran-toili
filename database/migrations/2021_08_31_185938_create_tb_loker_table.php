@@ -25,9 +25,9 @@ class CreateTbLokerTable extends Migration
             $table->string('id_lokasi_perkerjaan');
             $table->string('id_tipe_pekerjaan');
             $table->string('id_lulusan_pekerjaan');
-            $table->tinyText('deskripsi');
-            $table->string('tanggal_posting');
-            $table->string('tanggal_penutupan');
+            $table->longText('deskripsi');
+            $table->dateTime('tanggal_posting')->useCurrent();
+            $table->dateTime('tanggal_penutupan')->useCurrent();
             $table->string('estimasi_gaji');
             $table->string('image');
             $table->dateTime('create_date')->useCurrent();
