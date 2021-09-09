@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class RequestClient extends Model
 {
@@ -37,6 +38,13 @@ class RequestClient extends Model
         $totaldata = count($typjob);
         $type = [];
             for ($i=0; $i<=$totaldata-1; $i++) {
+                //date
+                $date1 = $typjob[$i]['tanggal_posting'];
+                $date2 = date('Y-m-d');
+                $diff = abs(strtotime($date2) - strtotime($date1));
+                $years = floor($diff / (365*60*60*24));
+                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24))+1;
                 $json = [];
                 $pushtypejob = [];
                 $job = $typjob[$i]['id_tipe_pekerjaan'];
@@ -68,6 +76,7 @@ class RequestClient extends Model
                 $json['company'] = $typjob[$i]['nama_lembaga'];
                 $json['graduated'] = $jsongraduated[0]['graduated'];
                 $json['postdate'] = $typjob[$i]['tanggal_posting'];
+                $json['posttime'] = $days.' Hari yang lalu';
                 $json['location'] = $jsonlocation[0]['location'];
                 $json['salary'] = $typjob[$i]['estimasi_gaji'];
                 array_push($type,$json);
@@ -86,6 +95,14 @@ class RequestClient extends Model
         $totaldata = count($typjob);
         $type = [];
             for ($i=0; $i<=$totaldata-1; $i++) {
+                //date
+                $date1 = $typjob[$i]['tanggal_posting'];
+                $date2 = date('Y-m-d');
+                $diff = abs(strtotime($date2) - strtotime($date1));
+                $years = floor($diff / (365*60*60*24));
+                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24))+1;
+
                 $json = [];
                 $pushtypejob = [];
                 $job = $typjob[$i]['id_tipe_pekerjaan'];
@@ -117,6 +134,7 @@ class RequestClient extends Model
                 $json['company'] = $typjob[$i]['nama_lembaga'];
                 $json['graduated'] = $jsongraduated[0]['graduated'];
                 $json['postdate'] = $typjob[$i]['tanggal_posting'];
+                $json['posttime'] = $days.' Hari yang lalu';
                 $json['location'] = $jsonlocation[0]['location'];
                 $json['salary'] = $typjob[$i]['estimasi_gaji'];
                 array_push($type,$json);

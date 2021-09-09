@@ -222,6 +222,9 @@
                                 <span>
                                   <i class="fa fa-graduation-cap" aria-hidden="true"></i> : {{$job['graduated']}} </span>&nbsp;&nbsp; <span>
                                   <i class="fa fa-clock-o" aria-hidden="true"></i> : {{$job['postdate']}} </span>
+                                <span>
+                                  <i class="fa fa-calendar" aria-hidden="true"></i> : <a href="#">{{$job['posttime']}}</a>
+                                </span>
                               </small>
                             </div>
                             <div class="col-md-2 col-sm-2 col-xs-12">
