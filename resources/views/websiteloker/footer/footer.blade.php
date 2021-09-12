@@ -150,13 +150,17 @@
           </div>
         </div>
       </div>
-      <div class="dmtop">
-        <i class="fa fa-angle-up"></i>
+      <div class="dmtop" onclick="scrollToTop()">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
       </div>
       
       <script src="{{asset('js/jquery.js')}}"></script>
       <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
+      <script>
+        function scrollToTop() {
+            $(window).scrollTop(0);
+        }
+      </script>
       <script type="text/javascript">
         (function() {
           var options = {

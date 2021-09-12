@@ -4,6 +4,7 @@
     @include('websiteloker.meta.meta')
     @include('websiteloker.head.head')
     <link rel="stylesheet" type="text/css" href="{{asset('style/css/search.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/loading.css')}}">
   <body>
     <div id="wrapper">
       <div class="topbar">
@@ -25,22 +26,22 @@
               <div class="social-topbar">
                 <ul class="list-inline social-small">
                   <li>
-                    <a href="https://www.instagram.com/Loker Toili/" target="_blank">
+                    <a href="#" target="_blank">
                       <i class="fa fa-instagram" style="background: #28689e;"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.facebook.com/Loker Toili.co.id/" target="_blank">
+                    <a href="#" target="_blank">
                       <i class="fa fa-facebook-square" style="background: #28689e;"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://play.google.com/store/apps/details?id=id.co.Loker Toili" target="_blank">
+                    <a href="#" target="_blank">
                       <i class="fa fa-whatsapp" aria-hidden="true"  style="background: #28689e;"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://itunes.apple.com/id/app/Loker Toili/id1451701919?mt=8" target="_blank">
+                    <a href="#" target="_blank">
                       <i class="fa fa-play" aria-hidden="true" style="background: #28689e;"></i>
                     </a>
                   </li>
@@ -65,7 +66,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" title="" href="https://www.Loker Toili.co.id/">
+                <a class="navbar-brand" title="" href="#">
                   <img src="{{asset('style/images/logo.png')}}" alt="" class="img-responsive">
                 </a>
               </div>
@@ -116,9 +117,12 @@
                     <div class="entry-content">
                         <div class="job_listings">
                             @include('websiteloker.filter.filter')
+                            <div class="loader">
+                                <img src="{{asset('images/gif/spinner.gif')}}" alt="loading.."> 
+                              </div>
+                            <div id="listjob">
                               @foreach ($jobs as $job)
-                              <p></p>
-                                <div class="row">
+                                <div class="row"> 
                                     <div class="col-md-2 col-sm-2 col-xs-12">
                                       <div class="post-media" style="text-align: center;">
                                         <a href="#" target="_blank" class="img-thumbnail">
@@ -170,8 +174,8 @@
                                 </div>
                                 <hr>
                               @endforeach
-                            <a class="btn btn-primary load_more_jobs" href="#" style="display: block; padding: 1em 1em 1em 2em;">
-                            <strong>LOWONGAN SELANJUTNYA</strong></a>
+                            </div>
+                             <button class="see-more btn-primary job-search load_more_jobs" data-page="2" data-link="{{url('')}}/page/" data-div="#listjob">LIHAT LOWONGAN LEBIH BANYAK</button> 
                         </div>
                     </div>
                 </div> 
@@ -181,16 +185,77 @@
       @include('websiteloker.footer.footer')
   </body>
 </html>
-<script src='https://stats.wp.com/e-202135.js' defer></script>
+<script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+
 <script>
-  _stq = window._stq || [];
-  _stq.push(['view', {
-    v: 'ext',
-    j: '1:10.0',
-    blog: '137155195',
-    post: '2',
-    tz: '7',
-    srv: 'www.Loker Toili.co.id'
-  }]);
-  _stq.push(['clickTrackerInit', '137155195', '2']);
+
+  $(function() {
+      $("#search_keywords").focus();
+  });
+
+  $('#search_keywords').keypress(function(e){
+      if(e.which == 13){
+          e.preventDefault();
+          var search_keywords = $('#search_keywords').val();
+          var search_graduate = $('#search_graduate').val(); 
+          var search_region = $('#search_region').val();  
+          $div = $($(this).data('div')); 
+          $link = $(this).data('link'); 
+          $page = $(this).data('page'); 
+          $href = $link + $page; 
+          let _url = $href;
+          let _token = $('meta[name="csrf-token"]').attr('content');
+          $.ajax({
+              url: _url,
+              type: "POST",
+              data: {
+                search_keywords : search_keywords,
+                search_graduate : search_graduate,
+                search_region : search_region,
+                _token
+          },
+          beforeSend: function() {
+            $('.loader').css('display','block');
+          },
+          success: function(response) {
+              $('.loader').css('display','none');
+              $('#listjob').empty();
+              $html = response;
+              $div.append($html);
+              var str = (parseInt($page) + 1);
+              $("#search_keywords").data('page', String(str));
+          },
+          error: function(response) {
+            
+          }
+          });
+        }
+    });
+
+  //load more
+  $(".see-more").click(function() {
+      event.preventDefault();
+      $div = $($(this).data('div')); 
+      $link = $(this).data('link'); 
+      $page = $(this).data('page'); 
+      $href = $link + $page; 
+      let _url = $href;
+      let _token = $('meta[name="csrf-token"]').attr('content');
+      $.ajax({
+          url: _url,
+          type: "GET",
+          data: {
+      },
+        success: function(response) {
+            $html = response;
+            $div.append($html);
+            var str = (parseInt($page) + 1);
+            $(".see-more").data('page', String(str));
+        },
+        error: function(response) {
+          
+        }
+      });
+  });
+  
 </script>

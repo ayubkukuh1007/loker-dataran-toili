@@ -1,0 +1,9 @@
+.loader{
+    z-index: 999;
+    left: 50%;
+    position: absolute;
+    margin-top: 5%;
+    right: 50%;
+    display: none;
+}
+

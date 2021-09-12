@@ -15,6 +15,8 @@ Route::get('page/{page}', [MainController::class,'pagination']);
 //search job
 Route::get('search-lowongan', [SearchlowonganController::class,'searchjob']);
 Route::get('search-lowongan', [SearchlowonganController::class,'index']);
+Route::post('search-lowongan/job/page/{page}', [SearchlowonganController::class,'pagination_keywords']);
+
 Route::get('format-iklan', function () {return view('websiteloker.formatiklan');});
 Route::get('kebijakan', function () {return view('websiteloker.kebijakan');});
 Route::get('kontak', function () {return view('websiteloker.kontak');});

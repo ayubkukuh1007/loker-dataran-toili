@@ -109,7 +109,7 @@
         <!-- end container -->
       </header>
       <!-- end header -->
-      <div class="parallax section homehero" data-stellar-background-ratio="0.5" style="background-image:url('style/upload/sampul1.png');">
+      <div class="parallax section homehero" data-stellar-background-ratio="0.5" style="background-image:url('style/upload/tentang-kami.png');">
         <div class="container">
           <div class="row">
             <div class="col-md-9">
@@ -329,7 +329,6 @@
   </body>
 </html>
 <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
-<!-- <script src='https://stats.wp.com/e-202135.js' defer></script> -->
 <script>
   //load more
   $(".see-more").click(function() {
@@ -346,6 +345,9 @@
           data: {
       },
         success: function(response) {
+            if (!response.length){
+              alert("kosong")
+            }
             $html = response;
             $div.append($html);
             var str = (parseInt($page) + 1);
@@ -357,16 +359,4 @@
       });
   });
 
-</script>
-<script>
-  _stq = window._stq || [];
-  _stq.push(['view', {
-    v: 'ext',
-    j: '1:10.0',
-    blog: '137155195',
-    post: '2',
-    tz: '7',
-    srv: 'www.LokerToili.co.id'
-  }]);
-  _stq.push(['clickTrackerInit', '137155195', '2']);
 </script>

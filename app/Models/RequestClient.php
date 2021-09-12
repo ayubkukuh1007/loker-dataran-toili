@@ -34,7 +34,7 @@ class RequestClient extends Model
         ->where('nama_pekerjaan', 'like', '%'.$job.'%')
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -93,7 +93,7 @@ class RequestClient extends Model
         ->where('nama_pekerjaan', 'like', '%'.$job.'%')
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -152,7 +152,7 @@ class RequestClient extends Model
         ->where('nama_pekerjaan', 'like', '%'.$job.'%')
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -211,7 +211,7 @@ class RequestClient extends Model
         ->where('id_lokasi_perkerjaan', '=', $idregion)
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -270,7 +270,7 @@ class RequestClient extends Model
         ->where('nama_pekerjaan', 'like', '%'.$job.'%')
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -329,7 +329,7 @@ class RequestClient extends Model
         ->where('id_lulusan_pekerjaan', '=', $idgraduated)
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -388,7 +388,7 @@ class RequestClient extends Model
         ->where('id_lulusan_pekerjaan', '=', $idgraduated)
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -447,7 +447,7 @@ class RequestClient extends Model
         ->where('nama_pekerjaan', 'like', '%'.$job.'%')
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -506,7 +506,7 @@ class RequestClient extends Model
         ->where('id_lokasi_perkerjaan', '=', $idregion)
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -566,7 +566,7 @@ class RequestClient extends Model
         ->where('id_lulusan_pekerjaan', '=', $idgraduated)
         ->orderBy('id', 'desc')
         ->skip(0)
-        ->take(8)
+        ->take(30)
         ->get();
         $typjob = json_decode($type_job,true);
         $totaldata = count($typjob);
@@ -659,7 +659,7 @@ class RequestClient extends Model
                     }         
                 }
                 array_push($json,$pushtypejob);
-                $json['jobtype'] = $json['0'];
+                $json['jobtype'] = $json['0'];  
                 unset($json['0']);
                 $json['id'] = $typjob[$i]['id'];
                 $json['logo'] = $typjob[$i]['image'];
