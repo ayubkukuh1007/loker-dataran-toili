@@ -96,7 +96,7 @@
 
     function initialdatatable(){
         var table = $('#example1').DataTable({
-                  "ajax": "http://127.0.0.1:8000/master-lokasi-kerja/show",
+                  "ajax": "{{url('master-lokasi-kerja/show')}}",
                   "order": [[ 0, "desc" ]],
                   "pageLength": 5,
                   "recordsTotal": 50,

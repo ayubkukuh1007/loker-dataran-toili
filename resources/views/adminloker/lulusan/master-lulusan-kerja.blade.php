@@ -96,7 +96,7 @@
 
     function initialdatatable(){
         var table = $('#example1').DataTable({
-                  "ajax": "http://127.0.0.1:8000/master-lulusan-kerja/show",
+                  "ajax": "{{url('master-lulusan-kerja/show')}}",
                   "order": [[ 0, "desc" ]],
                   "pageLength": 5,
                   "recordsTotal": 50,
@@ -134,7 +134,7 @@
 
     function deletedatalulusan(){
        event.preventDefault();
-          let _url = `master-lulusan-kerja/delete`;
+          let _url = "{{url('master-lulusan-kerja/delete')}}";
           let _token = $('meta[name="csrf-token"]').attr('content');
           $.ajax({
               url: _url,
@@ -166,7 +166,7 @@
         var checkbtn = document.getElementById('btnaction').innerHTML;
         if (checkbtn == "Simpan") {
             var graduated = $('#lulusankerja').val();
-            let _url = `master-lulusan-kerja/store`;
+            let _url = "{{url('master-lulusan-kerja/store')}}";
             let _token = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
                 url: _url,

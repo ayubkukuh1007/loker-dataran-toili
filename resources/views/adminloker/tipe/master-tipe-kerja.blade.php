@@ -96,7 +96,7 @@
 
     function initialdatatable(){
         var table = $('#example1').DataTable({
-                  "ajax": "http://127.0.0.1:8000/master-tipe-kerja/show",
+                  "ajax": "{{url('master-tipe-kerja/show')}}",
                   "order": [[ 0, "desc" ]],
                   "pageLength": 5,
                   "recordsTotal": 50,
@@ -134,7 +134,7 @@
 
     function deletedatatype(){
        event.preventDefault();
-          let _url = `master-tipe-kerja/delete`;
+          let _url = "{{url('master-tipe-kerja/show')}}";
           let _token = $('meta[name="csrf-token"]').attr('content');
           $.ajax({
               url: _url,
@@ -166,7 +166,7 @@
         var checkbtn = document.getElementById('btnaction').innerHTML;
         if (checkbtn == "Simpan") {
             var type = $('#typekerja').val();
-            let _url = `master-tipe-kerja/store`;
+            let _url = "{{url('master-tipe-kerja/store')}}";
             let _token = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
                 url: _url,
@@ -188,7 +188,7 @@
           });
         }else if (checkbtn == "Edit") {
             var type = $('#typekerja').val();
-            let _url = `master-tipe-kerja/edit`;
+            let _url = "{{url('master-tipe-kerja/edit')}}";
             let _token = $('meta[name="csrf-token"]').attr('content');
             $.ajax({
                 url: _url,

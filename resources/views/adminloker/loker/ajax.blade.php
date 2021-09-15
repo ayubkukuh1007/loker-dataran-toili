@@ -23,10 +23,10 @@
     function resetUploadPreview() {
       if (!$('#preview-image-before-upload').val()) {
         $("#image").val('');
-        $('#preview-image-before-upload').attr('src', 'http://127.0.0.1:8000/images/logo/unknown.gif');
+        $('#preview-image-before-upload').attr('src', '{{url('images/logo/unknown.gif')}}');
       }else {
         $("#image").val('');
-         $('#preview-image-before-upload').attr('src', 'http://127.0.0.1:8000/images/logo/unknown.gif');
+         $('#preview-image-before-upload').attr('src', '{{url('images/logo/unknown.gif')}}');
       }
     }
 
@@ -42,7 +42,7 @@
                     render: $.fn.dataTable.render.ellipsis(5, true )
                   } 
                 ],
-                "ajax": "http://127.0.0.1:8000/pasang-lowongan-kerja/show",
+                "ajax": "{{url('pasang-lowongan-kerja/show')}}",
                 "order": [[ 0, "desc" ]],
                 "pageLength": 5,
                 "autoWidth": false,
@@ -53,9 +53,9 @@
                     { data: 'id' },
                     { data: 'image',render: function (data, type, row, meta) {
                         if (!data==""){
-                          return '<img src=http://127.0.0.1:8000/images/logo/'+data+' height="50" width="50"/>';   
+                          return '<img src={{url('images/logo/')}}/'+data+' height="50" width="50"/>';   
                         }else{
-                          return '<img src=http://127.0.0.1:8000/images/logo/unknown.gif height="50" width="50"/>';   
+                          return '<img src={{url('images/logo/unknown.gif')}} height="50" width="50"/>';   
                         }
                       }
                     },
@@ -103,7 +103,7 @@
                     render: $.fn.dataTable.render.ellipsis(5, true )
                   } 
                 ],
-                "ajax": "http://127.0.0.1:8000/pasang-lowongan-kerja/close",
+                "ajax": "{{url('pasang-lowongan-kerja/close')}}",
                 "order": [[ 0, "desc" ]],
                 "pageLength": 5,
                 "autoWidth": false,
@@ -114,9 +114,9 @@
                     { data: 'id' },
                     { data: 'image',render: function (data, type, row, meta) {
                         if (!data==""){
-                          return '<img src=http://127.0.0.1:8000/images/logo/'+data+' height="50" width="50"/>';   
+                          return '<img src={{url('images/logo/')}}/'+data+' height="50" width="50"/>';   
                         }else{
-                          return '<img src=http://127.0.0.1:8000/images/logo/unknown.gif height="50" width="50"/>';   
+                          return '<img src={{url('images/logo/unknown.gif')}} height="50" width="50"/>';   
                         }
                       }
                     },
@@ -157,7 +157,7 @@
     }
 
     function getdetail(idRow){
-        let _url = `http://127.0.0.1:8000/pasang-lowongan-kerja/getdetail`;
+        let _url = "{{url('pasang-lowongan-kerja/getdetail')}}";
         let _token = $('meta[name="csrf-token"]').attr('content');
         $.ajax({
             url: _url,
@@ -176,7 +176,7 @@
     }
 
       function getdetailedit(idRow){
-        let _url = `http://127.0.0.1:8000/pasang-lowongan-kerja/getdetail`;
+        let _url = "{{url('pasang-lowongan-kerja/getdetail')}}";
         let _token = $('meta[name="csrf-token"]').attr('content');
         $.ajax({
             url: _url,
@@ -225,7 +225,7 @@
 
     // data field lokasi,tipe,lulusan
     function getdatafield(){
-        let _url = `http://127.0.0.1:8000/pasang-lowongan-kerja/getdatafield`;
+        let _url = "{{url('pasang-lowongan-kerja/getdatafield')}}";
         let _token = $('meta[name="csrf-token"]').attr('content');
         $.ajax({
             url: _url,
@@ -273,7 +273,7 @@
 
     function deletedataloker(){
        event.preventDefault();
-          let _url = `http://127.0.0.1:8000/pasang-lowongan-kerja/delete`;
+          let _url = "{{url('pasang-lowongan-kerja/delete')}}";
           let _token = $('meta[name="csrf-token"]').attr('content');
           $.ajax({
               url: _url,
@@ -374,7 +374,7 @@
             var tanggal_posting = $('#tanggal_posting').val();
             var tanggal_penutupan = $('#tanggal_penutupan').val();
             var estimasi_gaji = $('#estimasi_gaji').val();
-            let _url = `http://127.0.0.1:8000/pasang-lowongan-kerja/store`;
+            let _url = "{{url('pasang-lowongan-kerja/store')}}";
             let _token = $('meta[name="csrf-token"]').attr('content');
             var image = imageCompany;
 
@@ -436,7 +436,7 @@
             var tanggal_posting = $('#tanggal_posting').val();
             var tanggal_penutupan = $('#tanggal_penutupan').val();
             var estimasi_gaji = $('#estimasi_gaji').val();
-            let _url = `http://127.0.0.1:8000/pasang-lowongan-kerja/edit`;
+            let _url = "{{url('pasang-lowongan-kerja/edit')}}";
             let _token = $('meta[name="csrf-token"]').attr('content');
             var image = imageCompany;
 
